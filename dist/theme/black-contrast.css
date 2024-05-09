@@ -6,9 +6,26 @@
  * - Keep the source similar to black.css - for easy comparison.
  * - $mainFontSize controls code blocks, too (although under some ratio).
  */
-@import url(./fonts/source-sans-pro/source-sans-pro.css);
+:root {
+  --font-sans: "Overused Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-serif: Georgia, Times, serif;
+  --font-mono: Menlo, Courier, monospace;
+}
+
+@font-face {
+  font-family: "Overused Grotesk";
+  src: url("https://raw.githubusercontent.com/RandomMaerks/Overused-Grotesk/main/fonts/variable/OverusedGrotesk-VF.woff2") format("woff2 supports variations"), url("https://raw.githubusercontent.com/RandomMaerks/Overused-Grotesk/main/fonts/variable/OverusedGrotesk-VF.woff2") format("woff2-variations");
+  font-weight: 300 900;
+}
 section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
   color: #000;
+}
+
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
 }
 
 /*********************************************
@@ -16,28 +33,28 @@ section.has-light-background, section.has-light-background h1, section.has-light
  *********************************************/
 :root {
   --r-background-color: #000000;
-  --r-main-font: Source Sans Pro, Helvetica, sans-serif;
+  --r-main-font: var(--font-sans);
   --r-main-font-size: 42px;
   --r-main-color: #fff;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
+  --r-heading-font: var(--font-sans);
   --r-heading-color: #fff;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
-  --r-heading-text-transform: uppercase;
+  --r-heading-text-transform: none;
   --r-heading-text-shadow: none;
-  --r-heading-font-weight: 600;
+  --r-heading-font-weight: 550;
   --r-heading1-text-shadow: none;
   --r-heading1-size: 2.5em;
   --r-heading2-size: 1.6em;
   --r-heading3-size: 1.3em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
-  --r-link-color: #42affa;
-  --r-link-color-dark: #068de9;
-  --r-link-color-hover: #8dcffc;
-  --r-selection-background-color: #bee4fd;
+  --r-link-color: #d3ff92;
+  --r-link-color-dark: #b4ff46;
+  --r-link-color-hover: #f2ffdf;
+  --r-selection-background-color: white;
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
@@ -144,8 +161,10 @@ section.has-light-background, section.has-light-background h1, section.has-light
   font-weight: bold;
 }
 
-.reveal em {
-  font-style: italic;
+.reveal em,
+.reveal i {
+  font-style: normal;
+  font-variation-settings: "slnt" -10;
 }
 
 .reveal ol,
@@ -296,7 +315,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   vertical-align: top;
 }
 
-.reveal img {
+.reveal img:not(.emoji) {
   margin: var(--r-block-margin) 0;
 }
 

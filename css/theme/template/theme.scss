@@ -101,8 +101,10 @@
 	font-weight: bold;
 }
 
-.reveal em {
-	font-style: italic;
+.reveal em,
+.reveal i {
+	font-style: normal;
+	font-variation-settings: 'slnt' -10;
 }
 
 .reveal ol,
@@ -256,7 +258,7 @@
 	vertical-align: top;
 }
 
-.reveal img {
+.reveal img:not(.emoji) {
 	margin: var(--r-block-margin) 0;
 }
 

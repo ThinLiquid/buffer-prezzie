@@ -8,16 +8,264 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/black-contrast.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
+	<style>
+		.safari {
+			* {
+				font-family: cursive;
+				font-weight: 900;
+				filter: saturate(4);
+			}
+		}
+		body::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+	backdrop-filter: blur(0.75px) contrast(1.1) saturate(0.75);
+}
+
+@keyframes flicker {
+  0% {
+  opacity: 0.27861;
+  }
+  5% {
+  opacity: 0.34769;
+  }
+  10% {
+  opacity: 0.23604;
+  }
+  15% {
+  opacity: 0.90626;
+  }
+  20% {
+  opacity: 0.18128;
+  }
+  25% {
+  opacity: 0.83891;
+  }
+  30% {
+  opacity: 0.65583;
+  }
+  35% {
+  opacity: 0.67807;
+  }
+  40% {
+  opacity: 0.26559;
+  }
+  45% {
+  opacity: 0.84693;
+  }
+  50% {
+  opacity: 0.96019;
+  }
+  55% {
+  opacity: 0.08594;
+  }
+  60% {
+  opacity: 0.20313;
+  }
+  65% {
+  opacity: 0.71988;
+  }
+  70% {
+  opacity: 0.53455;
+  }
+  75% {
+  opacity: 0.37288;
+  }
+  80% {
+  opacity: 0.71428;
+  }
+  85% {
+  opacity: 0.70419;
+  }
+  90% {
+  opacity: 0.7003;
+  }
+  95% {
+  opacity: 0.36108;
+  }
+  100% {
+  opacity: 0.24387;
+  }
+}
+
+body::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes textShadow {
+  0% {
+    text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  5% {
+    text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  20% {
+    text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  35% {
+    text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  40% {
+    text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  55% {
+    text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  60% {
+    text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  90% {
+    text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+}
+
+body {
+	transform: scale(1.2, 1);
+}
+	</style>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-auto-animate>
+					<h2 data-id="head" style="font-size: 2.5em;">://buffer</h2>
+					<p>a Spotify-based music visualizer</p>
+				</section>
+				<section data-auto-animate>
+					<h2 data-id="head">why did i make this?</h2>
+					<ul>
+						<li class="fragment fade-up">opportunity to learn new JavaScript APIs</li>
+						<li class="fragment fade-up">im broke and i hate ads 😭🙏</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h2 data-id="head">how did we get here?</h2>
+					<ul>
+						<li class="fragment fade-up">tried to make an idle game<br/><small class="fragment fade-up">and failed...</small></li>
+						<li class="fragment fade-up">tried to make an UNO clone<br/><small class="fragment fade-up">and still failed...</small></li>
+						<li class="fragment fade-up" data-id="list">tried to make a music visualizer<br/><small class="fragment fade-up">and didn't fail 😎</small></li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h2 data-id="head2">
+						<ul style="margin:0;padding:0;list-style:none;">
+							<li data-id="list">original prototype 🤮</li>
+						</ul>
+					</h2>
+					<img data-id="img" src="/img/before.png" height="500px">
+				</section>
+				<section data-auto-animate>
+					<h2 data-id="head2">looksmaxx update 🤫🧏</h2>
+					<img data-id="img" src="/img/after.png">
+				</section>
+				<section data-auto-animate>
+					<h2 data-id="head2">problems i faced</h2>
+					<ul>
+						<li>getting playable audio</li>
+						<li>acquiring synced lyrics</li>
+						<li>making the visualizer using the Canvas API</li>
+						<li>making a good queue system</li>
+						<li>optimizing for chromebooks<br/><small>it was bound to happen... 💻🔥</small></li>
+						<li>playing cross-origin audio</li>
+						<li data-id="list2">Safari being an annoying browser</li>
+						<li>the school's web filter</li>
+						<li>making the ✨ user interface ✨</li>
+					</ul>
+				</section>
+				<section class="safari" data-auto-animate data-background-image="img/safari.png" data-background-opacity="0.2" data-background-size="650% 150%">
+					<h2 data-id="head3">
+						<ul style="margin:0;padding:0;list-style:none;">
+							<li data-id="list2">problems on safari</li>
+						</ul>
+					</h2>
+					<ul>
+						<li>getting iOS devtools on Windows</li>
+						<li>audio not playing</li>
+						<li>audio being pitched up too high<br/><small>how does this even happen 😭</small></li>
+						<li>Safari's strict autoplay restrictions</li>
+						<li>Media Session API not working</li>
+						<li>visualizer having a nap 💤</li>
+						<li><code>audio/webm</code> format not being natively supported</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h2 data-id="head3">things i learnt</h2>
+					<ul data-id="list">
+						<li>how to turn an AudioBuffer into a WAV file<br/><small>this is Safari's fault</small></li>
+						<li>how to use the Media Session API</li>
+						<li>how to use the Web Audio API</li>
+						<li>how to use the Canvas API</li>
+						<li>how to use ArrayBuffer(s)</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h2 data-id="head3">live demo</h2>
+					<p><a href="https://thinliquid.github.io/buffer">https://thinliquid.github.io/buffer</a></p>
+					<p><small>made with ❤ in 223 hours</small></p>
+				</section>
 			</div>
 		</div>
 
@@ -25,15 +273,27 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js"></script>
+		<script src="plugin/twemoji/twemoji.js"></script>
 		<script>
+			
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
+				width: 1920,
+				height: 720,
+
 				hash: true,
 
+				autoAnimateEasing: 'cubic-bezier(0.77,0,0.18,1)',
+				autoAnimateDuration: 1.5,
+  			autoAnimateUnmatched: true,
+
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealTwemoji ],
+
+				progress: false
 			});
 		</script>
 	</body>
