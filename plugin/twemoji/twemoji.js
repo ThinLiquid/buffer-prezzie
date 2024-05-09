@@ -1,0 +1,1 @@
+!function(e,o){"object"==typeof exports&&"undefined"!=typeof module?module.exports=o():"function"==typeof define&&define.amd?define(o):(e="undefined"!=typeof globalThis?globalThis:e||self).RevealTwemoji=o()}(this,(function(){"use strict";return()=>({id:"revealTwemoji",init(e){e.on("ready",(()=>{twemoji.parse(e.getRevealElement(),{folder:"svg",ext:".svg"})}))}})}));
